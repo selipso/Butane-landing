@@ -37,6 +37,7 @@ const Layout = ({ children }) => {
           style={{
             marginTop: `var(--space-5)`,
             fontSize: `var(--font-sm)`,
+            paddingLeft: '2rem'
           }}
         >
           © {new Date().getFullYear()} All rights reserved

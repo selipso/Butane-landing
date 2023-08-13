@@ -4,69 +4,12 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
 import butaneyo from "../assets/butaneyo.mp4"
+import xLogo from "../assets/x.svg"
+import discordLogo from "../assets/discord.svg"
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
-
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+const headerStyle = { color: 'rgb(55, 126, 247)', marginTop: '3rem' }
+const textStyle = { color: 'white', textAlign: 'center' }
+const socialContainerStyle = { width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-around', marginTop: '4rem', paddingRight: '12rem', paddingLeft: '12rem'}
 
 const IndexPage = () => (
   <Layout>
@@ -74,7 +17,23 @@ const IndexPage = () => (
       <source src={butaneyo} type="video/mp4" />
     </video>
     <main style={{ textAlign: 'center', margin: '0 auto' }}>
-      <h1 style={{ color: 'skyblue', marginTop: '3rem' }}>Synthetics on Cardano</h1>
+      <h1 style={headerStyle}>Synthetics on Cardano</h1>
+      <br />
+      <a 
+        href="https://pool.pm/asset1vv3wgsx9xpg5gpl4629mparm7hlpqnavpdwnj3" 
+        style={textStyle}
+      >asset1vv3wgsx9xpg5gpl4629mparm7hlpqnavpdwnj3</a>
+      <br />
+      <br />
+      <span style={textStyle}>$BTN</span>
+      <div className="social-container" style={socialContainerStyle}>
+        <a href="https://discord.gg/butane" style={{ display: 'inline-block' }}>
+          <img style={{ height: '2rem', width: 'auto'}} src={discordLogo} />
+        </a>
+        <a href="https://twitter.com/butaneprotocol" style={{ display: 'inline-block' }}>
+          <img style={{ height: '2rem', width: 'auto'}} height="1rem" width="auto" src={xLogo} />
+        </a>
+      </div>
     </main>
   </Layout>
 )
