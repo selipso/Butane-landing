@@ -2,7 +2,6 @@ import * as React from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
 import butaneyo from "../assets/butaneyo.mp4"
 import xLogo from "../assets/x.svg"
 import discordLogo from "../assets/discord.svg"
@@ -10,6 +9,15 @@ import discordLogo from "../assets/discord.svg"
 const headerStyle = { color: 'rgb(55, 126, 247)', marginTop: '3rem' }
 const textStyle = { color: 'white', textAlign: 'center' }
 const socialContainerStyle = { width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-around', marginTop: '4rem', paddingRight: '12rem', paddingLeft: '12rem'}
+
+const SocialLink = ({ logoSrc, pageLink, imgDesc }) => (
+  <a href={pageLink}>
+    <img
+      style={{ height: '2rem', width: 'auto'}}
+      src={logoSrc}
+      alt={imgDesc} />
+  </a>
+)
 
 const IndexPage = () => (
   <Layout>
@@ -27,12 +35,16 @@ const IndexPage = () => (
       <br />
       <span style={textStyle}>$BTN</span>
       <div className="social-container" style={socialContainerStyle}>
-        <a href="https://discord.gg/butane" style={{ display: 'inline-block' }}>
-          <img style={{ height: '2rem', width: 'auto'}} src={discordLogo} />
-        </a>
-        <a href="https://twitter.com/butaneprotocol" style={{ display: 'inline-block' }}>
-          <img style={{ height: '2rem', width: 'auto'}} height="1rem" width="auto" src={xLogo} />
-        </a>
+        <SocialLink 
+          logoSrc={discordLogo}
+          pageLink="https://discord.gg/butane"
+          imgDesc="Discord Logo"
+        />
+        <SocialLink 
+          logoSrc={xLogo}
+          pageLink="https://twitter.com/butaneprotocol"
+          imgDesc="Twitter X Logo"
+        />
       </div>
     </main>
   </Layout>
